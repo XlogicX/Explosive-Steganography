@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   id="svg7577"
+   version="1.1"
+   inkscape:version="0.48.3.1 r9886"
+   width="600"
+   height="600"
+   sodipodi:docname="filesystem2.png">
+  <metadata
+     id="metadata7583">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs7581">
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient9817">
+      <stop
+         style="stop-color:#000000;stop-opacity:1;"
+         offset="0"
+         id="stop9819" />
+      <stop
+         style="stop-color:#000000;stop-opacity:0;"
+         offset="1"
+         id="stop9821" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient9817"
+       id="linearGradient9823"
+       x1="2.0423729"
+       y1="-7.4004211e-06"
+       x2="597.95764"
+       y2="600"
+       gradientUnits="userSpaceOnUse" />
+  </defs>
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1440"
+     inkscape:window-height="845"
+     id="namedview7579"
+     showgrid="false"
+     inkscape:zoom="0.78666667"
+     inkscape:cx="268.16494"
+     inkscape:cy="300"
+     inkscape:window-x="0"
+     inkscape:window-y="27"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg7577" />
+  <rect
+     style="fill:url(#linearGradient9823);fill-opacity:1;stroke:#000000;stroke-width:1;stroke-miterlimit:4;stroke-opacity:0;stroke-dasharray:none"
+     id="rect7587"
+     width="600"
+     height="602.54236"
+     x="2.5423729"
+     y="-3.1658169e-07"
+     ry="1.875" />
+  <text
+     xml:space="preserve"
+     style="font-size:68.55841827px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+     x="114.93878"
+     y="120.39973"
+     id="text9825"
+     sodipodi:linespacing="125%"
+     transform="scale(0.94124629,1.0624212)"><tspan
+       sodipodi:role="line"
+       id="tspan9827"
+       x="114.93878"
+       y="120.39973">Magic Bomb</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#8e0000;fill-opacity:1;stroke:none;font-family:Sans"
+     x="39.40678"
+     y="260.59323"
+     id="text9829"
+     sodipodi:linespacing="125%"><tspan
+       sodipodi:role="line"
+       id="tspan9831"
+       x="39.40678"
+       y="260.59323">Size after Scalpel: 530 TB</tspan><tspan
+       sodipodi:role="line"
+       x="39.40678"
+       y="310.59323"
+       id="tspan9833" /><tspan
+       sodipodi:role="line"
+       x="39.40678"
+       y="360.59323"
+       id="tspan9837" /></text>
+  <text
+     xml:space="preserve"
+     style="font-size:35.78448868px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+     x="22.190231"
+     y="347.98898"
+     id="text9841"
+     sodipodi:linespacing="125%"
+     transform="scale(0.89461224,1.1178027)"><tspan
+       sodipodi:role="line"
+       id="tspan9843"
+       x="22.190231"
+       y="347.98898">Extracted with Magicbomb --osaur:</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-size:60.866539px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+     x="75.886993"
+     y="415.97589"
+     id="text9845"
+     sodipodi:linespacing="125%"
+     transform="scale(0.886504,1.1280265)"><tspan
+       sodipodi:role="line"
+       id="tspan9847"
+       x="75.886993"
+       y="415.97589">Lol.exe, 19 MB,</tspan><tspan
+       sodipodi:role="line"
+       x="75.886993"
+       y="492.05905"
+       id="tspan9849">Picked up as Virus</tspan></text>
+</svg>

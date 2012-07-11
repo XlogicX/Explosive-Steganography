@@ -1,6 +1,13 @@
-Presentation Slides and tools will be released near the end of my talk at HOPE
+This is the location of my scripts and presentation files for
 (Hackers on Planet Earth) Number 9.
 
 Location of Conference: Hotel Pennsylvania in New York City
 Time of this talk: 4 pm EST, July 15 2012.
 Time talk materials hit GitHub: 4:50 pm EST, July 15 2012
+
+Scripts tools are all written in perl; so the tools end in .pl
+
+Presentation is the Explosive Steganography.html, the other
+files are supporting files to the main html.
+
+Any questions, bug reports, trolling: no.axiom@gmail.com

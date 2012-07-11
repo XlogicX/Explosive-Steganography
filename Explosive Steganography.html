@@ -1,0 +1,544 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Explosive Steganography</title>
+        <meta http-equiv="Content-Type" content="text/html; charset="UTF-8">
+    <meta name="viewport" content="width=1024" />
+    </head>
+    <body>
+
+    <link href="css/stego.css" rel="stylesheet" />
+
+<body class="impress-not-supported">
+
+<div class="fallback-message">
+    <p>Your browser <b>doesn't support the features required</b> by impress.js, so you are presented with a simplified version of this presentation.</p>
+    <p>For the best experience please use the latest <b>Chrome</b>, <b>Safari</b> or <b>Firefox</b> browser.</p>
+</div>
+
+<!--
+id="impress" required for impress.js
+data-transition-duration is optional. Time is in ms.
+-->
+<div id="impress" data-transition-duration="1000">
+
+<div id="script-intro1" class="step" data-x="0" data-y="0" data-scale="1">
+    <q>Explosive Steganography</q><br>
+    <pre><font size="6">	-Eric Davisson (aka XlogicX)</pre><br>
+	<pre>  scripts/presentation files at:<br></pre>
+     <a https://github.com/XlogicX/Explosive-Steganography">https://github.com/XlogicX/Explosive-Steganography</a></font>
+</div>
+
+<div id="definition1" class="step slide" data-x="0" data-y="1000" data-scale="1">
+    <q>What I plan to talk about</q><br><br>
+	<ul>
+	<li><pre>-Quick intro to Steganography</li><br>
+	<li><pre>-Massive Off-Topic Concepts</li><br>
+	<li><pre>-What is "Explosive" Steganography?</li><br>
+	<li><pre>-The Explosive Stego tools:</li>
+	<li><pre>	-Archive Bombing</li>
+	<li><pre>	-Virus Decoys</li>
+	<li><pre>	-File-Carving (Scalpel/Formost) Trolling</li>
+	</ul> 
+</div>
+
+<div class="step slide" data-x="0" data-y="2000" data-scale="1">
+    <q>For those of you not familiar</q><br>
+    <q>with steganography...</q>
+</div>
+
+<div class="step slide" data-x="1000" data-y="2000" data-rotate-z="-30" data-scale="1">
+    A long time ago in the B.C. there as a tyranical settlement to the east. We had some spies over there pretexting as staff to the tyrant ruler.<br><br>
+    We also have some poison hidden in that settlment. The problem?<br><br>
+    The spies don't know where the poison is. We need to send a messenger to the spies with that location.<br><br><br>
+    (Crayon drawings loosely inspired by the Greek Histaiaeus story)
+</div>
+
+<div class="step" data-x="2000" data-y="2000" data-rotate-z="-60" data-scale="1">
+    <q>The PLAINTEXT mistake</q><br><br>
+    <img src="art/spy_message1.png" class="stretch"/>
+</div>
+
+<div class="step" data-x="2300" data-y="2700" data-rotate-z="-60" data-scale="1">
+    <img src="art/guards_no2.png" class="stretch"/>
+</div>
+
+<div class="step" data-x="3000" data-y="2000"data-rotate-z="-90" data-scale="1">
+    <q>The CIPHERED mistake</q><br><br>
+    <img src="art/spy_message2.png" class="stretch"/>
+</div>
+
+<div class="step" data-x="2300" data-y="2700" data-rotate-z="-60" data-scale="1">
+    <img src="art/guards_no2.png" class="stretch"/>
+</div>
+
+<div class="step" data-x="4000" data-y="2000" data-rotate-z="-120" data-scale="1">
+    <q>The STEGO'D messenger</q><br><br>
+    <img src="art/spy_message3.png" class="stretch"/>
+</div>
+
+<div class="step" data-x="4600" data-y="1700" data-rotate-z="-120" data-scale="1">
+    <img src="art/guards_yes2.png" class="stretch"/>
+</div>
+
+<div class="step" data-x="5200" data-y="1400" data-rotate-z="-120" data-scale="1">
+    <img src="art/shave_head.png" class="stretch"/>
+</div>
+
+<div class="step slide" data-x="0" data-y="3000" data-z="0" data-rotate-x="0" data-scale="1">
+    <q>In other words, a phrase that typically sums steganography up is:</q><br><br>
+    <q>"Hidden in plain sight."<q>
+</div>
+
+<div class="step slide" data-x="0" data-y="4000" data-z="0" data-rotate-x="0" data-scale="1">
+    <q>Common/Modern Steganography</q><br><br>
+    Embedding hidden messages inside of an image<br><br>
+    Our Phx2600 friend Nak created a web version at <a href="https://github.com/naked/node-stego">Node-Stego</a>
+</div>
+
+<div class="step" data-x="1000" data-y="4000" data-z="0" data-rotate-x="0" data-scale="1">
+    <img src="art/stego1.svg" class="stretch"/> 
+</div>
+
+<div class="step" data-x="2000" data-y="4000" data-z="0" data-rotate-x="0" data-scale="1">
+    <img src="art/stego1(anotated).svg" class="stretch"/>
+</div>
+
+<div class="step slide" data-x="3000" data-y="4000" data-z="0" data-rotate-x="0" data-scale="1">
+    <img src="art/stegotext.svg" class="stretch"/>
+</div>
+
+<div class="step" data-x="3000" data-y="4700" data-z="0" data-rotate-x="0" data-scale="1">
+    <img src="art/stegobin.svg" class="stretch"/>
+</div>
+
+<div class="step" data-x="2000" data-y="4700" data-z="0" data-rotate-x="0" data-scale="1">
+    <img src="art/stego2(anotated).svg" class="stretch"/>
+</div>
+
+<div class="step" data-x="1000" data-y="4700" data-z="0" data-rotate-x="0" data-scale="1">
+    <img src="art/stego2.svg" class="stretch"/>
+</div>
+
+<div class="step" data-x="1500" data-y="4350" data-z="1000" data-rotate-x="0" data-scale="2">
+</div>
+
+<div class="step slide" data-x="0" data-y="5000" data-z="0" data-rotate-x="0" data-scale="1">
+    <font size="10">Book Cipher (Hidden Context)</font><br><br><br><br><br><br>
+    <font size="6">Congress shall make no law respecting an establishment
+of religion, or prohibiting the free exercise thereof; or
+abridging the freedom of speech, or of the press, or the
+right of the people peaceably to assemble, and to petition
+the Government for a redress of grievances.</font>
+</div>
+
+<div class="step slide" data-x="0" data-y="6000" data-z="0" data-rotate-x="0" data-scale="1">
+    <font size="10">Book Cipher</font><br><br>
+<font color="blue"><pre>Key (Context): 45,9      14,9,6      2,3,7,5,5,8,10      12,18,29,13,22</pre></font><br><br>
+    <font size="6">Congress <font color="red">s</font>hall <font color="red">m</font>ake no <font color="red">l</font>aw <font color="red">r</font>especting <font color="red">a</font>n <font color="red">e</font>stablishment<br>
+<font color="red">o</font>f <font color="red">r</font>eligion, or <font color="red">p</font>rohibiting <font color="red">t</font>he <font color="red">f</font>ree exercise thereof; or<br>
+<font color="red">a</font>bridging the freedom of <font color="red">s</font>peech, or of the press, or the<br>
+<font color="red">r</font>ight of the people peaceably to assemble, and to petition<br>
+the Government for a redress of <font color="red">g</font>rievances.</font><br><br><br>
+<font color="red">go for smaller parts</font>
+</div>
+
+
+<div class="step" data-x="0" data-y="7000" data-z="0" data-rotate-x="0" data-scale="1">
+    <q>Data...No Context...just 1's and 0's</q><br><br>
+    <q>010011110100010001000100</q>
+</div>
+
+<div class="step" data-x="-1000" data-y="6000" data-z="1000" data-rotate-x="0" data-scale="1">
+    <q>Context: ASCII</q><br><br>
+    <q><pre>01001111 01000100 01000100</q>
+    <q><pre><font color="red">ASCII: 4F 44 44</font></pre></q>
+</div>
+
+<div class="step" data-x="-1750" data-y="5000" data-z="2000" data-rotate-x="0" data-scale="1">
+    <q>Context: Plain Text</q><br><br>
+    <q><pre>01001111 01000100 01000100</q>
+    <q><pre>ASCII: 4F 44 44</pre></q>
+    <q><pre><font color="red">Plain Text: ODD</font></pre></q>
+</div>
+
+<div class="step" data-x="0" data-y="7000" data-z="0" data-rotate-x="0" data-scale="1">
+</div>
+
+<div class="step" data-x="-1000" data-y="8000" data-z="1000" data-rotate-x="0" data-scale="1">
+    <q>Context: Base64</q><br><br>
+    <q><pre>010011 110100 010001 000100</q>
+    <q><pre><font color="red">Base64: 19 52 17 04</font></pre></q>
+</div>
+
+<div class="step" data-x="-1750" data-y="9000" data-z="2000" data-rotate-x="0" data-scale="1">
+    <q>Context: Plain Text</q><br><br>
+    <q><pre>010011 110100 0100010 00100</q>
+    <q><pre>Base64: 19 52 17 04</pre></q>
+    <q><pre><font color="red">Plain Text: T0RE</font></pre></q>
+</div>
+
+<div class="step slide" data-x="0" data-y="8000" data-z="0" data-rotate-x="0" data-scale="1">
+	Apophenia - the experience of seeing meaningful patterns or connections in random or meaningless data.
+    <img src="art/cars.svg" class="stretch"/>
+</div>
+
+<div class="step" data-x="0" data-y="9000" data-z="0" data-rotate-x="0" data-scale="1">
+    <img src="art/lights1.png" class="stretch"/>
+</div>
+
+<div class="step" data-x="1000" data-y="9000" data-z="0" data-rotate-x="0" data-scale="1">
+    <img src="art/lights2.png" class="stretch"/>
+</div>
+
+<div class="step" data-x="2000" data-y="9000" data-z="0" data-rotate-x="0" data-scale="1">
+    <img src="art/lights3.png" class="stretch"/>
+</div>
+
+<div class="step" data-x="3000" data-y="9000" data-z="0" data-rotate-x="0" data-scale="1">
+    <img src="art/lights4.png" class="stretch"/>
+</div>
+
+<div class="step" data-x="4000" data-y="9000" data-z="0" data-rotate-x="0" data-scale="1">
+    <img src="art/lights5.png" class="stretch"/>
+</div>
+
+<div class="step" data-x="5000" data-y="9000" data-z="0" data-rotate-x="0" data-scale="1">
+GATCCACCCATCTCGGTCTCCCAAAGTG
+CTAGGATTGCAGGCCTGAGCCACCGCGC
+CCAGCTGCCTTGTGCTTTTAATCCCAGC
+ACTTTCAGAGGCCAAGGCAGGCGATCAG
+CTGAGGTCAGGAGTTCAAGACCAGCCTG
+GCCAACATGGTGAAACCCCATCTCTAAT
+ACAAATACAAAAAAAAAACAAAAAACGT
+TAGCCAGGAATGAGGCCCGGTGCTTGTA
+ATCCTAAGGAAGGAGACCACCACTCCTC
+CTGCTGCCCTTCCCTTCCCCACACCGCT
+</div>
+
+<div class="step slide" data-x="0" data-y="10000" data-z="0" data-rotate-x="0" data-scale="1">
+     <q>The Explosive Steganography Toolkit</q>
+</div>
+
+<div class="step" data-x="1660" data-y="9955" data-z="0" data-rotate-x="0" data-scale=".13">
+     <img src="art/waldo1.svg" class="stretch"/>
+</div>
+
+<div class="step" data-x="2000" data-y="9800" data-z="0" data-rotate-x="0" data-scale="1">
+     <img src="art/waldo2.png" class="stretch"/>
+</div>
+
+<div class="step" data-x="1870" data-y="9840" data-z="0" data-rotate-x="0" data-scale=".08">
+     <img src="art/poo.png" class="stretch"/>
+</div>
+
+<div class="step slide" data-x="1000" data-y="11000" data-z="0" data-rotate-x="0" data-scale="2">
+     <q>Archive Bombs</q>
+</div>
+
+<div class="step slide" data-x="2200" data-y="10500" data-z="0" data-rotate-x="0" data-scale=".5">
+     <q>eZIPlode!</q>
+</div>
+
+<div class="step slide" data-x="2800" data-y="10500" data-z="0" data-rotate-x="0" data-scale=".5">
+     <q>History on Archive Bombs:</q>
+     <q>42.zip</q>
+</div>
+
+<div class="step" data-x="3200" data-y="10500" data-z="0" data-rotate-x="0" data-scale=".5">
+     <img src="art/42-01.svg" class="stretch"/>
+</div>
+
+<div class="step" data-x="3200" data-y="10550" data-z="0" data-rotate-x="0" data-scale=".12">
+     <img src="art/42-02.svg" class="stretch"/>
+</div>
+
+<div class="step" data-x="3206" data-y="10559" data-z="0" data-rotate-x="0" data-scale=".02">
+     <img src="art/42-03.svg" class="stretch"/>
+</div>
+
+<div class="step" data-x="3214" data-y="10559" data-z="0" data-rotate-x="0" data-scale=".003">
+     <img src="art/42-04.svg" class="stretch"/>
+</div>
+
+<div class="step" data-x="3215" data-y="10558" data-z="0" data-rotate-x="0" data-scale=".0005">
+     <img src="art/42-05.svg" class="stretch"/>
+</div>
+
+<div class="step" data-x="3215.17" data-y="10558.01" data-z="0" data-rotate-x="0" data-scale=".0001">
+     <img src="art/42-06.svg" class="stretch"/>
+</div>
+
+<div class="step" data-x="4200" data-y="10500" data-z="0" data-rotate-x="0" data-scale="4">
+     <img src="art/42-07.svg" class="stretch"/>
+</div>
+
+<div class="step slide" data-x="2400" data-y="11000" data-z="0" data-rotate-x="0" data-scale=".5">
+     eZIPlode is a script that will generate a zip file with an absurd amount of data inside.<br><br>
+     I chose to stick with the very standard 32-bit vanilla zip, so some limitations apply:<br><br>
+     <pre>	-Files can only be 4.3 GB in size</pre><br>
+     <pre>	-Can only have 65535 files</pre><br>
+     This means we are limited to a mere 256 TB :(
+</div>
+
+<div class="step" data-x="2400" data-y="11500" data-z="0" data-rotate-x="0" data-scale=".5">
+     <img src="art/eziplode_01normalfile.svg" class="stretch"/>
+</div>
+
+<div class="step" data-x="2400" data-y="12000" data-z="0" data-rotate-x="0" data-scale=".5">
+     <img src="art/eziplode_02zipfile.svg" class="stretch"/>
+</div>
+
+<div class="step" data-x="2600" data-y="11950" data-z="0" data-rotate-x="0" data-scale=".25">
+     <img src="art/eziplode_03header.svg" class="stretch"/>
+</div>
+
+<div class="step" data-x="2600" data-y="12100" data-z="0" data-rotate-x="0" data-scale=".25">
+     <img src="art/eziplode_04mids1.svg" class="stretch"/>
+</div>
+
+<div class="step" data-x="2740" data-y="12100" data-z="0" data-rotate-x="0" data-scale=".15">
+     <img src="art/eziplode_04mids2.svg" class="stretch"/>
+</div>
+
+<div class="step" data-x="2565" data-y="12190" data-z="0" data-rotate-x="0" data-scale=".15">
+     <img src="art/eziplode_05footer.svg" class="stretch"/>
+</div>
+
+<div class="step" data-x="3000" data-y="12000" data-z="0" data-rotate-x="0" data-scale=".25">
+     <img src="art/eziplode_06offsets.svg" class="stretch"/>
+</div>
+
+<div class="step" data-x="3000" data-y="12200" data-z="0" data-rotate-x="0" data-scale=".25">
+     <img src="art/eziplode_07offsets.svg" class="stretch"/>
+</div>
+
+<div class="step slide" data-x="2200" data-y="12400" data-z="0" data-rotate-x="0" data-scale=".5">
+     <q>Time for a Demo</q>
+</div>
+
+<div class="step slide" data-x="2400" data-y="13000" data-z="0" data-rotate-x="0" data-scale=".5">
+     <a href="eziplode.html">Screenshots</a>
+</div>
+
+<div class="step slide" data-x="2200" data-y="13500" data-z="0" data-rotate-x="0" data-scale=".5">
+     <q>ZIPmouth</q>
+     <br><br>ZIPmouth allows you to add encrypted data into most zip files.<br><br><br>
+     This encrypted data is encapsulated with a fake zip header<br><br><br>
+     Even if someone were to extract the entire archive, the data would not be contained in any of the extracted files
+</div>
+
+<div class="step" data-x="3000" data-y="13500" data-z="0" data-rotate-x="0" data-scale=".5">
+     <img src="art/eziplode_08stego.svg" class="stretch"/>
+</div>
+
+<div class="step slide" data-x="2400" data-y="14000" data-z="0" data-rotate-x="0" data-scale=".5">
+     <q>Time for a demo<q>
+     <a href="zipmouth.html">Screenshots</a>
+</div>
+
+<div class="step slide" data-x="1000" data-y="15000" data-z="0" data-rotate-x="0" data-scale="2">
+     <q>Hiding in Illness (Virus Decoys)</q>
+</div>
+
+<div class="step slide" data-x="2200" data-y="14500" data-z="0" data-rotate-x="0" data-scale=".5">
+     <q>HIVsneeze<q>
+</div>
+
+<div class="step slide" data-x="2400" data-y="15000" data-z="0" data-rotate-x="0" data-scale=".5">
+     HIVsneeze generates a user-defined amount of "virus's"<br><br>
+     These are false-positives; they are just signatures (extracted from ClamAV's definitions)<br><br>
+     Many file types generated will actually still function<br>
+     <pre>	-exe's will execute</pre><br>
+     <pre>	-pdf's will open a pdf in your reader</pre><br>
+     <pre>	-zip files resemble r.zip</pre><br>
+     <pre>	-etc...</pre>
+</div>
+
+<div class="step slide" data-x="2400" data-y="15500" data-z="0" data-rotate-x="0" data-scale=".5">
+     Current Features/Usage<br><br>
+     <pre>	-User defined amount of files</pre><br>
+     <pre>	-Can define filename and extension</pre><br>
+     <pre>	-"spread" option will randomize file extensions when using</pre>
+     <pre>              many files</pre><br>
+     <pre>	-"signatures" option allows you to pack more than 1 signature</pre>
+     <pre>              in each file</pre><br>
+     <pre>	-Ability to add random padding data</pre><br>
+     <pre>	-The "Suckerpunch" option, a carefully crafted 'signature' that</pre>
+     <pre>              scans high across most vendors</pre>
+</div>
+
+<div class="step slide" data-x="2400" data-y="16000" data-z="0" data-rotate-x="0" data-scale=".5">
+     Why HIVsneeze?<br><br>
+     <pre>	-Make a target look hostile/damaged/infected</pre><br>
+     <pre>	-A more powerfull EICAR (test your AV)</pre><br>
+     <pre>	-Forensic Saturation when used with HIVasaur</pre>
+</div>
+
+<div class="step" data-x="2400" data-y="16500" data-z="0" data-rotate-x="0" data-scale=".5">
+     <img src="art/EICAR.svg" class="stretch"/>
+</div>
+
+<div class="step slide" data-x="2400" data-y="17000" data-z="0" data-rotate-x="0" data-scale=".5">
+     <q>Time for a Demo</q>
+     <a href="hivsneeze.html">Screenshots</a>
+</div>
+
+<div class="step slide" data-x="2200" data-y="17500" data-z="0" data-rotate-x="0" data-scale=".5">
+     <q>HIVasaur</q>
+</div>
+
+<div class="step slide" data-x="2400" data-y="18000" data-z="0" data-rotate-x="0" data-scale=".5">
+     HIVasaur does everything HIVsneeze can, but it also injects encrypted steganography.<br><br>
+     For obvious reasons, this script works with single files; instead of 'sneezing' a batch.<br><br>
+     When using HIVasaur, I recommend also doing a big hivsneeze (with padding) to make forensics more nightmarish.
+</div>
+
+<div class="step slide" data-x="2400" data-y="18500" data-z="0" data-rotate-x="0" data-scale=".5">
+     <q>Time for a Demo</q>
+     <a href="hivasaur.html">Screenshots</a>
+</div>
+
+<div class="step slide" data-x="1000" data-y="19000" data-z="0" data-rotate-x="0" data-scale="2">
+     <q>File Carving Mishaps</q>
+</div>
+
+<div class="step slide" data-x="2200" data-y="19500" data-z="0" data-rotate-x="0" data-scale=".5">
+     <q>MagicBomb<q>
+</div>
+
+<div class="step slide" data-x="2400" data-y="20000" data-z="0" data-rotate-x="0" data-scale=".5">
+     <q>First, let's talk about how Scalpel works...</q>
+     <q>Then, how we an abuse it</q>
+</div>
+
+<div class="step" data-x="3000" data-y="20000" data-z="0" data-rotate-x="0" data-scale=".5">
+     <img src="art/scalpel-01.svg" class="stretch"/>
+</div>
+
+<div class="step" data-x="3500" data-y="20000" data-z="0" data-rotate-x="0" data-scale=".5">
+     <img src="art/scalpel-02.png" class="stretch"/>
+</div>
+
+<div class="step" data-x="4000" data-y="20000" data-z="0" data-rotate-x="0" data-scale=".5">
+     <img src="art/scalpel-03.png" class="stretch"/>
+</div>
+
+<div class="step" data-x="4700" data-y="20000" data-z="0" data-rotate-x="0" data-scale=".5">
+     <img src="art/scalpel-04.png" class="stretch"/>
+</div>
+
+<div class="step" data-x="5300" data-y="20000" data-z="0" data-rotate-x="0" data-scale=".5">
+     <img src="art/scalpel-05.svg" class="stretch"/>
+</div>
+
+<div class="step slide" data-x="2400" data-y="20500" data-z="0" data-rotate-x="0" data-scale=".5">
+     <q>Usage:</q>
+     -Magicbomb takes a scalpel.conf as an input to it's header/footer generation.<br><br>
+     -It spits out all of the headers, then all of the footers.<br><br>
+     -You tell the script how many times you would like this deviant behavior to repeat.<br><br>
+     -If you'd like, you can insert random padding between the headers and footers.<br>
+</div>
+
+<div class="step slide" data-x="3000" data-y="20500" data-z="0" data-rotate-x="0" data-scale=".5">
+	<q>MP3 mp3.conf:<br>
+	<pre>	mp3	y	8000000	ID3</pre>
+	<br><br>
+	$ magicbomb.pl --multiplier=10 mp3.conf out.dd</q>
+</div>
+
+<div class="step" data-x="3600" data-y="20500" data-z="0" data-rotate-x="0" data-scale=".5">
+     <img src="art/id3.svg" class="stretch"/>
+</div>
+
+<div class="step" data-x="4200" data-y="20500" data-z="0" data-rotate-x="0" data-scale=".5">
+     <img src="art/riaa.svg" class="stretch"/>
+</div>
+
+<div class="step" data-x="4800" data-y="20500" data-z="0" data-rotate-x="0" data-scale=".5">
+     <img src="art/pedoscalp.svg" class="stretch"/>
+</div>
+
+<div class="step" data-x="5400" data-y="20500" data-z="0" data-rotate-x="0" data-scale=".5">
+     <img src="art/pedocom.png" class="stretch"/>
+</div>
+
+<div class="step slide" data-x="2400" data-y="21000" data-z="0" data-rotate-x="0" data-scale=".5">
+     <q>Time for a Demo</q>
+     <a href="magicbomb.html">Screenshots</a>
+</div>
+
+<div class="step slide" data-x="2200" data-y="21500" data-z="0" data-rotate-x="0" data-scale=".5">
+     <q>MagicBomb --asour</q><br><br>
+     -MagicBomb --asour is an extension of the same MagicBomb script.<br><br>
+     -This option adds encrypted steganography between the headers and footers.<br><br>
+     -The steganography has it's own header/footer (the defaults are configureable).<br><br>
+</div>
+
+<div class="step slide" data-x="2400" data-y="22000" data-z="0" data-rotate-x="0" data-scale=".5">
+     <q>Time for a Demo</q>
+     <a href="magicbombosaur.html">Screenshots</a>
+</div>
+
+<div class="step slide" data-x="1000" data-y="23500" data-z="0" data-rotate-x="0" data-scale="2">
+     <q>Spam</q>
+</div>
+
+<div class="step slide" data-x="2200" data-y="24000" data-z="0" data-rotate-x="0" data-scale=".5">
+     <a href="http://www.spammimic.com">spammimic.com</a><br><br>
+
+Dear Friend , Especially for you - this breath-taking<br>
+news ! This is a one time mailing there is no need<br>
+to request removal if you won't want any more . This<br>
+mail is being sent in compliance with Senate bill 2016<br>
+; Title 7 , Section 301 ! Do NOT confuse us with Internet<br>
+scam artists . Why work for somebody else when you<br>
+can become rich within 75 DAYS ! Have you ever noticed<br>
+people love convenience and people love convenience<br>
+. Well, now is your chance to capitalize on this .<br>
+WE will help YOU use credit cards on your website plus<br>
+sell more ! You can begin at absolutely no cost to<br>
+you . But don't believe us . Mr Simpson of Delaware<br>
+tried us and says "Now I'm rich, Rich, RICH" ! We are<br>
+a BBB member in good standing . DO NOT DELAY - order<br>
+today . Sign up a friend and you'll get a discount<br>
+of 10% . Cheers ! <br>
+</div>
+
+
+<div class="step" data-x="0" data-y="27000" data-z="0" data-rotate-x="0" data-scale="5">
+     <img src="art/filesystem.png" class="stretch"/>
+</div>
+
+<div class="step" data-x="200" data-y="26000" data-z="0" data-rotate-x="0" data-scale=".5">
+     <img src="art/filesystem2.svg" class="stretch"/>
+</div>
+
+<div class="step" data-x="5000" data-y="26000" data-z="0" data-rotate-x="0" data-scale="1">
+     <img src="art/filesystem3.png" class="stretch"/>
+</div>
+
+<div class="step" data-x="5000" data-y="27000" data-z="0" data-rotate-x="0" data-scale="1">
+     <img src="art/filesystem4.png" class="stretch"/>
+</div>
+
+<div class="step slide" data-x="5000" data-y="28000" data-z="0" data-rotate-x="0" data-scale="1">
+This is the command:<br><br>
+
+echo "The princess is in another castle" > plaintext2.txt; eZIPlode.pl --nohelp --amount=65535 --filename-DCIM --fileext=jpg --outfile=pictured.zip; ZIPmouth.pl --inject --infile=plaintext2.txt --outfile=pictures.zip --hostfile=pictured.zip; hivasaur.pl --shareneedle --infile=pictures.zip --outfile=lol --ext=exe; magicbomb.pl --multiplier=316000 --osaur scalpel.conf out.dd lol.exe
+</div>
+
+<div class="step" data-x="0" data-y="32000" data-z="0" data-rotate-x="0" data-scale="4">
+     <img src="art/thanks.png" class="stretch"/>
+</div>
+
+<div class="step" data-x="0" data-y="15000" data-z="30000" data-rotate-x="0" data-scale="40">
+</div>
+
+<script type="text/javascript" src="js/impress.js"></script>
+<script>impress().init();</script>
+
+</div>
+
+    </body>
+</html>
