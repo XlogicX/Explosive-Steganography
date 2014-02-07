@@ -19,6 +19,7 @@ my $clamsource = "/var/lib/clamav/main.cvd";
 my $defsource = 0;
 my $signatures = 1;
 my $suckerpunch = 0;
+my $tumor = 0;
 my $ext = "exe";
 my $random;
 my @viriclone;
@@ -666,7 +667,8 @@ GetOptions('saliva=s' => \$saliva,
 		'ext=s' => \$ext,
 		'spread' => \$spread,
 		'padding=s' => \$padding,
-		'suckerpunch' => \$suckerpunch);
+		'suckerpunch' => \$suckerpunch,
+		'tumor' => \$tumor);
 
 if ($ext eq "vbs") {
 	$comment = "'";
@@ -693,7 +695,7 @@ open IN, "main.db";
 my @viri = <IN>;
 $viriindex = @viri;
 
-if ($saliva eq 0) {
+if (($saliva eq 0) && ($tumor eq 0)) {
 	print "\nHIVsneeze\n";
 	print "Description: HIVsneeze is a script that will craft a user-defined amount of files\n";
 	print "\tthat look like a virus to many AV products. These .exe files are not an actual\n";
@@ -738,6 +740,40 @@ if ($saliva eq 0) {
 	print "\t\tThis will output 10 files such as angrybirds1.exe, angrybirds2.exe, etc...\n";
         system 'rm main.db';
 	exit 0;
+}
+
+#If we want tumors, then ignore everything else and change each clam sig into a potential tumor
+#Tumor rate is very low, due to the conditions required in order for it to work.
+#The "Worm.VBS.IRC.Alba (Clam)" Signature works great for some reason
+if ($tumor) {
+	my ($sig, $name, $binary, $binary2, $byte);		#declare tumor sub vars
+	my $viriindex = @viri;							#Get amount of signatures
+	foreach (@viri) {								#Iterate through each signature
+		$sig = $_;									#garb current signature
+		if (($sig =~ /([^=]+)=(.+)$/) && ($sig !~ /\*|\?|\}|\{|\-/)){	#Regex to parse name and hex encoded version of sig data
+			$name = $1;						#The name
+			$binary = $2;					#The data
+		}
+	        open OUT, ">$name.txt";							#open a file with name of signature
+			print "working on $name\n" if ($verbose eq 1);	#Let user know which sig is being worked (if --verbose)		
+			$binary2 = $binary;								#Get a working copy of binary data
+			while ($binary) {                               #while there's binary data left to process 
+				if ($binary =~ /(..)/) {					#Get the first byte (2 ASCII chars)
+					print OUT pack("C*", map { $_ ? hex($_) :() } $1);	#convert from ASCII text to BIN
+					$binary =~ s/..//;						#remove those 2 characters (as they have been processed)
+				}
+			}
+			while ($binary2) {                              #while there's still binary data left to process
+				if ($binary2 =~ /(..)/) {					#Get the first byte (2 ASCII chars)
+					$byte = $1;								#Store byte into variable
+					#Convert from ASCII text to BIN XOR'd with \x6a (j)
+					print OUT (pack("C*", map { $_ ? hex($_) :() } $byte) ^ "j");
+					$binary2 =~ s/..//;						#remove those 2 characters (as they have been processed)
+				}
+			}
+		close OUT;											#close the file handle
+	}
+	exit;													#escape program
 }
 
 if ($saliva > 9000) {
